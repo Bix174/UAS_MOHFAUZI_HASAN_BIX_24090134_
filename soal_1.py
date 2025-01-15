@@ -1,21 +1,17 @@
-while True:
-  nama = input("Masukkan Nama : ")
-  nim = input("Masukkan Nim : ")
+data_mahasiswa = []
 
-  print ("Nama Mahasiswa" , nama , "Dengan NIM" , nim)
+def inputan():
+    mahasiswa = {}
+    mahasiswa['nim'] = int(input('Masukan NIM : '))
+    mahasiswa['nama'] = input('Masukan Nama  : ')
+    data_mahasiswa.append(mahasiswa)
+    
+def tambah_input():
+    inputan()
+    tambah = input('ingin tambah lagi?(y/t) : ')
+    if tambah == 'y':
+        tambah_input()
+    else:
+        print(data_mahasiswa)
 
-  perulangan = input("Apakah anda ingin melanjutkan? y/t?")
-
-  if perulangan == "YA":
-    continue
-  elif perulangan == "TIDAK":
-    print("terimakasih")
-    break
-  else:
-      print("Maaf, inputan yang anda masukkan tidak sesuai!")
-      perulangan = input("Apakah anda ingin melanjutkan? y/t?")
-  if perulangan == "YA":
-    continue
-  elif perulangan == "TIDAK":
-    print("Terima Kasih")
-    break
+tambah_input()
